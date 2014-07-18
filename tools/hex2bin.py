@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import sys
 import binascii
@@ -10,7 +11,7 @@ def hex_reorder(hexstr):
 
     raw = list()
     for i in elements:
-        for n in xrange(len(i)-1, 1, -2):
+        for n in xrange(len(i)-1, 0, -2):
             raw.append('{}{}'.format(i[n-1], i[n]))
     return ''.join(raw)
 

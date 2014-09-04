@@ -5,14 +5,15 @@ import binascii
 
 
 def hex_reorder(hexstr):
+    '''convert 32-bits hex from transpose to bin'''
     elements = list()
-    for i in xrange(0, len(hexstr), 8):
-        elements.append(hexstr[i:i+8])
+    for n in xrange(0, len(hexstr), 8):
+        elements.append(hexstr[n:n+8])
 
     raw = list()
-    for i in elements:
-        for n in xrange(len(i)-1, 0, -2):
-            raw.append('{}{}'.format(i[n-1], i[n]))
+    for item in elements:
+        for n in xrange(len(item)-1, 0, -2):
+            raw.append('{}{}'.format(item[n-1], item[n]))
     return ''.join(raw)
 
 
